@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import WorkoutWarrior from './Goals/WorkoutWarrior';
 import SleepSuperstar from './Goals/SleepSuperstar';
@@ -99,6 +99,8 @@ function App() {
       <footer>
         export url: <br />
         <a href={exportUrl}>{exportUrl}</a>
+
+        <button onClick={() => setExportUrl(generateExportURL())}>Refresh</button>
       </footer>
     </main>
   );

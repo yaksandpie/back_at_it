@@ -1,0 +1,23 @@
+:root {
+  --c-grey: #70767a;
+  --c-darkgrey: #6f767a;
+  --c-lightgrey: #f0f1f1;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: var(--c-darkgrey);
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -23,6 +23,7 @@ function WorkoutWarrior() {
     <article className='details'>
       {[...Array(DAYS_COUNT)].map((item, index) => (
         <div
+          key={`box${index}`}
           className={cn('box', { selected: index < workouts.length })}
           onClick={() => clickHandler(index)}
         >

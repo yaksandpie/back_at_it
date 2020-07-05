@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import WorkoutWarrior from './Goals/WorkoutWarrior';
 import SleepSuperstar from './Goals/SleepSuperstar';
@@ -17,7 +17,28 @@ import RecoveryRenegadePNG from './images/recovery_renegade.png';
 import SleepSuperstarPNG from './images/sleep_superstar.png';
 import WorkoutWarriorPNG from './images/workout_warrior.png';
 
+
+const LS_DELIMITER = ',,,';
+const generateExportURL = () => {
+  const goals = [
+    'workoutWarrior',
+    'sleepSuperstar',
+    'recoveryRenegade',
+    'healthyEatinHero',
+    'challengeCrusher',
+    'cardioChampion',
+  ].map((goal) => {
+    const ls = localStorage[goal];
+    return ls ? ls : null;
+  }).filter((goal) => {
+    return goal && goal !== '[]';
+  });
+  return goals.join(LS_DELIMITER);
+};
+
 function App() {
+  const [exportUrl, setExportUrl] = useState(generateExportURL());
+
   return (
     <main>
       <header>
@@ -74,6 +95,11 @@ function App() {
           </section>
         </article>
       </section>
+
+      <footer>
+        export url: <br />
+        <a href={exportUrl}>{exportUrl}</a>
+      </footer>
     </main>
   );
 }

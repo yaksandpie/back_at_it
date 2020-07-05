@@ -22,6 +22,7 @@ function CardioChampion() {
     <article className='details'>
       {[...Array(DAYS_COUNT)].map((item, index) => (
         <div
+          key={`box${index}`}
           className={cn('box', { selected: index < cardios.length })}
           onClick={() => clickHandler(index)}
         >

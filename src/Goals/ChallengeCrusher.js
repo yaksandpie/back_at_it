@@ -22,6 +22,7 @@ function ChallengeCrusher() {
     <article className='details'>
       {[...Array(DAYS_COUNT)].map((item, index) => (
         <div
+          key={`box${index}`}
           className={cn('box', { selected: index < crushers.length })}
           onClick={() => clickHandler(index)}
         >

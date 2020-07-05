@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 
-import useId from '../utilities/useId';
 import useLocalStorage from '../utilities/useLocalStorage';
 
 
@@ -21,7 +20,7 @@ function WorkoutWarrior() {
 
 
   return (
-    <article className='workoutWarrior'>
+    <article className='details'>
       {[...Array(DAYS_COUNT)].map((item, index) => (
         <div
           className={cn('box', { selected: index < workouts.length })}

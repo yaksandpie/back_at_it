@@ -6,6 +6,7 @@ import CardioChampion from './Goals/CardioChampion';
 import ChallengeCrusher from './Goals/ChallengeCrusher';
 import HealthyEatinHero from './Goals/HealthyEatinHero';
 import RecoveryRenegade from './Goals/RecoveryRenegade';
+import MeditationMaster from './Goals/MeditationMaster';
 
 import './App.css';
 
@@ -16,6 +17,7 @@ import HealthyEatinHeroPNG from './images/healthy_eatin_hero.png';
 import RecoveryRenegadePNG from './images/recovery_renegade.png';
 import SleepSuperstarPNG from './images/sleep_superstar.png';
 import WorkoutWarriorPNG from './images/workout_warrior.png';
+import MeditationMasterPNG from './images/meditation_master.png';
 
 
 const LS_DELIMITER = ',,,';
@@ -27,6 +29,7 @@ const generateExportURL = () => {
     'healthyEatinHero',
     'challengeCrusher',
     'cardioChampion',
+    'meditationMaster',
   ].map((goal) => {
     const ls = localStorage[goal];
     return ls ? ls : null;
@@ -92,6 +95,14 @@ function App() {
           <section className='content'>
             <h2>4 RECOVERY WORKOUTS</h2>
             <RecoveryRenegade />
+          </section>
+        </article>
+
+        <article className='row'>
+          <img src={MeditationMasterPNG} className="badge" alt="logo" />
+          <section className='content'>
+            <h2>MEDITATE FOR A WEEK</h2>
+            <MeditationMaster />
           </section>
         </article>
       </section>
